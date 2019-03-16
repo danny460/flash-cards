@@ -1,13 +1,11 @@
 /*jslint node: true */
-
+var config = require('./config');
 var request = require('request');
 var express = require('express');
 var app = express();
 var bodyParser = require("body-parser");
 var compress = require('compression');
-var fs = require('fs');
 var path = require('path');
-var config = require('./config');
 var serveStatic = require('serve-static');
 var helpers = require('./utils/helpers');
 var db = require("./db");
@@ -21,9 +19,8 @@ var commonMiddleware = require('./middlewares/common');
 var expressWinston = require('express-winston');
 var winston = require('winston');
 
-var dbConfig = require('./knexfile')[config.environment];
+var dbConfig = require('./knexfile');
 
-require('dotenv').config();
 if (config.debug) {
     app.use(compress());
 }

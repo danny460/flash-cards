@@ -25,5 +25,4 @@ node_modules/
 web-app/
 docs/
 
-# db
-db/flash-cards.db
+/db/flash-cards.db

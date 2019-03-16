@@ -1,6 +1,6 @@
 {
 	"apps": [{
-		"name": "flash cards",
+		"name": "fc-app",
 		"script": "app.js",
 		"instances": 0,
 		"exec_mode": "cluster",

@@ -50,8 +50,9 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
     extended: true
 }));
 app.use(trimBody());
-var listeningPort = process.env.PORT || 8091;
-var responseMaker = require("./utils/response-maker");
+if(!process.env.PORT) throw new Error('process.env.PORT not defined');
+var listeningPort = process.env.PORT;
+var responseMaker = require('./utils/response-maker');
 
 var apiRoutes = express.Router();
 //app.set('views', __dirname + '/public');
